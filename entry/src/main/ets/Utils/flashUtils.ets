@@ -1,6 +1,6 @@
-import camera from '@ohos.multimedia.camera';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // Get camera manager instance
 export function getCameraManager(context: common.BaseContext): camera.CameraManager | undefined {

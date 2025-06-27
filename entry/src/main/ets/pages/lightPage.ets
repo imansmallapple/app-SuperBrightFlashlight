@@ -5,9 +5,9 @@ import {
   getTorchMode,
   setTorchMode
 } from '../Utils/flashUtils'
-import camera from '@ohos.multimedia.camera';
-import { BusinessError } from '@ohos.base';
+import { camera } from '@kit.CameraKit';
 import brightness from '@ohos.brightness';
+import { common } from '@kit.AbilityKit';
 
 @Entry
 @Component
@@ -15,7 +15,7 @@ struct lightPage {
   @State lightLevel: number = 40
   @State isOn: boolean = true
   @State screenBrightnessValue: number = 0
-  private cameraManager: camera.CameraManager = getCameraManager(getContext(this)) as camera.CameraManager
+  private cameraManager: camera.CameraManager = getCameraManager(this.getUIContext().getHostContext() as common.UIAbilityContext) as camera.CameraManager
   private torchMode: camera.TorchMode = getTorchMode(this.cameraManager) as camera.TorchMode
 
   @Builder
